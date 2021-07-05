@@ -16,7 +16,7 @@ dbManager = DBmanager(app.config.get('DATABASE')) # <-- la base de datos inicial
 
 
 queryEurFrom = "SELECT sum(cantidad_from) FROM movimientos WHERE moneda_from = 'EUR';"
-
+print ("******")
 queryEurTo = "SELECT sum(cantidad_to) FROM movimientos WHERE moneda_to = 'EUR';"
 
 queryBtcFrom = "SELECT sum(cantidad_from) FROM movimientos WHERE moneda_from = 'BTC';"
@@ -37,7 +37,9 @@ queryTrxTo = "SELECT sum(cantidad_to) FROM movimientos WHERE moneda_to = 'TRX';"
 
 
 
-totalInv = queryEurFrom - queryEurTo
+print("*********")
+totalInv = float(queryEurFrom) - float(queryEurTo)
+
 # aqui una funcion que calcule el saldo en diferentes monedas
 def saldoCalculado():
 

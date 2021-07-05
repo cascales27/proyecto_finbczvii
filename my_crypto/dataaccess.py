@@ -40,3 +40,11 @@ class DBmanager():
         cur.execute(query, parametros)
         conexion.commit()
         conexion.close()
+
+    def invertidoEuros(self, query, parametros=[]):
+        conexion = sqlite3.connect(self.database_path)
+        cur = conexion.cursor()
+        cur.execute(query, parametros)
+        conexion.commit()
+        conexion.close()
+
