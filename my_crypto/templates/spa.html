@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My cripto</title>
+    <link rel="stylesheet" href="/static/css/milligram.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/spa.js"></script>
+</head>
+<body>
+    <header>
+    <h1>My cripto</h1></header>
+    <section class="container" id="lista-movimientos-75">  <!--cabecera con class container e id listamovimientos-->
+<h1>Control de movimientos</h1>   <!--h1 con el titulo de la lista-->
+        <div class="lista-movimientos">
+            <table class="tabla-movimientos">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>From</th>
+                        <th>Cantidad</th>   
+                        <th>To</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <hr>
+                
+                <tbody></tbody>
+            </table>
+            <hr>
+            </div>
+            <div class="row">
+            <div class="column column">  <!--las tres siguientes se deberian de cambiar y colocar en otro lado, a al derecha de la lista 1, de arriba hacia abjo-->
+                <label for="invertido">TOTAL INVERSIÓN €</label>
+                <input type="number" name="invertido" id="invertido" readonly placeholder="Total inversión (€)">
+            </div>
+            <hr>
+            <div class="column column">
+                <label for="valor_actual">VALORES ACTUAL €</label>
+                <input type="number" name="valor_actual" id="valores_actuales" readonly placeholder="Valores actuales (€)">
+            </div>
+            <div class="column column">
+                <label for="resultado">RESULTADO INVERSIONES €</label>
+                <input type="number" name="resultado" id="resultado" readonly placeholder="Resultado inversiones (€)">
+            </div>
+        </div>
+    </section>
+<hr>
+    <div class="detail-movimiento container">
+        <form>
+            <div class="row">
+                <div class="column column-33">
+                    <label for="moneda_from">From</label>
+                    <select name="moneda_from" id="moneda_from">
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="BTC">Bitcoin (BTC)</option>
+                        <option value="ETH">Ethereum (ETH)</option>
+                        <option value="XRP">XRP (XRP)</option>
+                        <option value="LTC">Litecoin (LTC)</option>
+                        <option value="BCH">Bitcoin Cash (BCH)</option>   <!--desplegable con las monedas-->
+                        <option value="BNB">Binance Coin(BNB)</option>
+                        <option value="USDT">Tether(USDT)</option>
+                        <option value="EOS">EOS (EOS)</option>
+                        <option value="BSV">Bitcoin SV (BSV)</option>
+                        <option value="XLM">Stellar (XLM)</option>
+                        <option value="ADA">Cardano (ADA)</option>
+                        <option value="TRX">TRON (TRX)</option>
+                    </select>
+                </div>
+                <div class="column column-33">
+                    <label for="moneda_to">To</label>
+                    <select name="moneda_to" id="moneda_to">
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="BTC">Bitcoin (BTC)</option>
+                        <option value="ETH">Ethereum (ETH)</option>
+                        <option value="XRP">XRP (XRP)</option>
+                        <option value="LTC">Litecoin (LTC)</option>
+                        <option value="BCH">Bitcoin Cash (BCH)</option>
+                        <option value="BNB">Binance Coin(BNB)</option>   <!--desplegable con las monedas-->
+                        <option value="USDT">Tether(USDT)</option>
+                        <option value="EOS">EOS (EOS)</option>
+                        <option value="BSV">Bitcoin SV (BSV)</option>
+                        <option value="XLM">Stellar (XLM)</option>
+                        <option value="ADA">Cardano (ADA)</option>
+                        <option value="TRX">TRON (TRX)</option>
+                    </select>
+                </div>  
+            </div>
+            <div class="row">
+                <div class="column column-33">
+                    <label for="cantidad_from">Q_From</label>
+                    <input type="number" name="cantidad_from" id="cantidad_from" step="any">
+                </div>
+                <div class="column column-33">
+                    <label for="cantidad_to">Q_To</label>
+                    <input type="number" name="cantidad_to" id="cantidad_to" readonly placeholder="No insertar cantidad">  <!--no se puede insertar nada, lo calcula la api-->
+                </div>  
+            </div>   
+            <div class="row">
+                <div class="column">
+                    <button id="calcular">Calcular</button>  <!--añadir boton reset-->
+                    <button id="ok">Realizar Operación</button>                
+                </div>
+            </div>
+        </form>
+        <hr>
+        
+        <hr>
+        <section class="container" id="lista-movimientos">
+            <div class="lista-movimientos">
+                <table class="tabla-saldos">
+                    <thead>
+                        <tr>
+                            <th>Tipo Moneda</th>
+                            <th>Saldo Invertido</th> <!--tabla de saldos obtenidos-->
+                            <th>Saldo Consolidado</th>
+                            <th>Saldo</th>
+                        </tr>  
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr>
+    </div>
+    
+
+    <footer>&copy Lawebdecascales.es 2021 - Todos los derechos reservados</footer>
+</body>
+</html>
